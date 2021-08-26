@@ -1,0 +1,114 @@
+﻿@model SmartOpsAPI.Dtos.UserDto
+@{
+    ViewData["Title"] = "ViewCustomerDetails";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+
+}
+
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <h4 class="mb-0 font-size-18"></h4>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+
+
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4 center" style="text-align: center;"><u>Customer Detail</u></h4>
+                            <br /><br />
+                            <form class="form-horizontal" method="post" asp-action="ViewUserRecord">
+                                
+                                <div class="form-group row mb-4">
+                                    <label for="horizontal-email-input" class="col-sm-3 col-form-label">Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" asp-for="Name" placeholder="Enter Email" readonly>
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" asp-for="Email" placeholder="Enter Name" readonly>
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-4">
+                                    <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Address</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" asp-for="Address" placeholder="Enter Address" readonly>
+                                        <span asp-validation-for="Address" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label for="horizontal-password-input" class="col-sm-3 col-form-label">PhoneNumber</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" asp-for="PhoneNumber" placeholder="Enter password" readonly>
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="formmessage">Record :</label>
+                                    <textarea id="formmessage" class="form-control" rows="3"></textarea>
+                                </div>
+                               
+                                <div class="form-group row justify-content-end">
+                                    <div class="col-sm-9">
+
+                                        <div>
+                                            <button type="button" class="btn btn-primary w-md" id="btnSubmit" name="btnSubmit" value="Work 1" onclick="javascript:submit();">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Skote.
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-right d-none d-sm-block">
+                        Design & Develop by Tobi Ojumu
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+

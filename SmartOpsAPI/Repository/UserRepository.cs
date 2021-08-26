@@ -12,9 +12,9 @@ namespace SmartOpsAPI.Repository
     {
         private readonly IUserRepository _userRepository;
         private ApplicationDbContext _db;
-        public UserRepository(IUserRepository userRepository, ApplicationDbContext db)
+        public UserRepository( ApplicationDbContext db)
         {
-            _userRepository = userRepository;
+           
             _db = db;
 
         }
@@ -35,8 +35,7 @@ namespace SmartOpsAPI.Repository
         }
 
         public bool Register(User userdata)
-        {
-            
+        {            
             User user = new User()
             {
                 Name    = userdata.Name,
@@ -47,9 +46,8 @@ namespace SmartOpsAPI.Repository
                 ImageUrl = userdata.ImageUrl,
                 Role = userdata.Role,
                 Token = userdata.Token,
-                IsVisible = userdata.IsVisible,
+                IsVisible = 1,
                 DateCreated = userdata.DateCreated
-
             };
 
             _db.Users.Add(user);

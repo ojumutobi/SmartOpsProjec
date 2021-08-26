@@ -13,5 +13,10 @@ namespace SmartOpsAPI.Repository.IRepository
         User GetUser(int userId);
 
         User GetUserRecord(int userId);
+
+        Task<int> CountAllUsers();
+        bool UpdateUser(User usrData);
+
+
     }
 }

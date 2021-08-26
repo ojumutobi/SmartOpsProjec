@@ -24,17 +24,84 @@ namespace SmartOpsAPI.Controllers
 
         [AllowAnonymous]
         [HttpPost("Register")]
+        [ProducesResponseType(201, Type = typeof(User))]
         public IActionResult RegisterUser([FromBody] User usrmodel, string password)
         {
             var result = _userRepository.Register(usrmodel);
 
             if (!result)
             {
-                return BadRequest( new { message = "User not Created Successfully" });
-            
+                return BadRequest( new { message = "User not Created Successfully" });            
             }
 
             return Ok(result);
+        }
+
+
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult GetUsers()
+        {
+            var result = _smartOpsRepository.GetUsers();
+
+            if (result.Count <= 0)
+            {
+                return BadRequest(new { message = "No record found" });
+
+            }
+
+            return Ok(result);
+        }
+
+        [AllowAnonymous]        
+        [HttpGet("{usrID}", Name = "GetUserById")]
+        public IActionResult GetUserById(int usrID)
+        {
+            var result = _smartOpsRepository.GetUser(usrID);
+
+            if (result == null)
+            {
+                return BadRequest(new { message = "No record found" });
+            }
+
+            return Ok(result);
+        }
+
+
+        [AllowAnonymous]
+        [HttpPut("{usrID}", Name = "UpdateUserById")]
+        [HttpPut("UpdateUserById")]
+
+        [ProducesResponseType(201, Type = typeof(User))]
+        public IActionResult UpdateUserById(User usr)
+        {
+            var result = _smartOpsRepository.UpdateUser(usr);
+
+            if (result == false)
+            {
+                return BadRequest(new { message = "No record found" });
+            }
+
+            if (result)
+            {
+                return Ok(result);
+            }
+
+            return Ok(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("CountAllUsers")]
+        public IActionResult CountAllUsers()
+        {
+            var result = _smartOpsRepository.CountAllUsers();
+            if (result == null)
+            {
+                return BadRequest(new { message = "No Record found" });
+            }
+            return Ok(result);
+
         }
     }
 }

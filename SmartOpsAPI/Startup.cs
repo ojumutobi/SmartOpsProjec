@@ -41,6 +41,8 @@ namespace SmartOpsAPI
             });
 
             services.AddScoped<ISmartOpsRepository, SmartOpsRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
 
         }
 

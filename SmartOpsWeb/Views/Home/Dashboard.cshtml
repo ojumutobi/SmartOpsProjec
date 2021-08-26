@@ -1,0 +1,245 @@
+﻿@*@using Microsoft.AspNetCore.Http
+    @inject IHttpContextAccessor httpAccessor*@
+@model SmartOpsWeb.Models.ViewModel.DashVM
+@*//@model IEnumerable<User>*@
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutTable.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="row">
+            <div class="col-md-4">
+                @if (TempData["alert_user_created_successfully"] != null)
+                {
+                    @*<div class="aslert alert-danger alert-dismissible fade show" role="alert">
+                @TempData["alert_user_created_successfully"]
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>*@
+
+
+                    <script type="text/javascript">
+                        window.onload = function () {
+                            swal("Good job!", '@TempData["pesan"]', "success");
+                        };
+                    </script>
+                    @*<div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+                <div class="p-3">
+                    <p>A custom positioned dialog</p>
+                    <button type="button" class="btn btn-primary waves-effect waves-light" id="sa-position">Click me</button>
+                </div>
+            </div>*@
+                }
+
+                @if (TempData["alert_user_updated_successfully"] != null)
+                {
+                    @*<div class="aslert alert-danger alert-dismissible fade show" role="alert">
+                @TempData["alert_user_updated_successfully"]
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>*@
+
+                    @*<div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
+                <div class="p-3">
+                    <alert type="button" class="btn btn-primary waves-effect waves-light" id="sa-position">Vinz us</alert>
+                </div>
+            </div>*@
+
+                    @*<div class="btn btn-primary waves-effect waves-light"  id="sa-basic" role="alert">
+                        @TempData["alert_user_updated_successfully"]
+                        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>*@
+
+
+                    <script type="text/javascript">
+                        window.onload = function () {
+                            swal("Good job!", '@TempData["alert_user_updated_successfully"]', "success");
+                        };
+                    </script>
+                }
+
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Users</p>
+                                <h4 class="mb-0">@Model.TotalUsersInDB</h4>
+                            </div>
+
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                <span class="avatar-title">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium"></p>
+                                <h4 class="mb-0"></h4>
+                            </div>
+
+                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
+                                <span class="avatar-title rounded-circle bg-primary">
+                                    <i class="bx bx-archive-in font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium"> </p>
+                                <h4 class="mb-0"></h4>
+                            </div>
+
+                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
+                                <span class="avatar-title rounded-circle bg-primary">
+                                    <i class="bx bx-purchase-tag-alt font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+        @*<div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4 float-sm-left">Email Sent</h4>
+                    <div class="float-sm-right">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Week</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Month</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Year</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div id="stacked-column-chart" class="apex-charts" dir="ltr"></div>
+                </div>
+            </div>*@
+    </div>
+</div>
+<div class="">
+    <div class="vendred"></div>
+    @*<div class="page-content">
+        <div class="container-fluid">*@
+
+    <!-- start page title -->
+    @*@if (httpAccessor.HttpContext.Session.GetString("JWToken") !=null &&
+                 httpAccessor.HttpContext.Session.GetString("JWToken").ToString().Length > 0 )
+        {
+
+        }*@
+
+    <div class="row">
+        <div class="col-6">
+
+        </div>
+
+        <div class="col-6 text-right">
+            <div class="btn-toolbar">
+                <div class="btn-group focus-btn-group">
+
+                </div>
+                <div class="btn-group focus-btn-group pull-right">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+
+        </div>
+        <div class="col-6 text-right">
+            <partial name="_CreateButtonPartial" />
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="table-rep-plugin">
+                        <div class="table-responsive mb-0" data-pattern="priority-columns">
+                            <table id="tech-companies-1" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th data-priority="1">Email</th>
+                                        <th data-priority="3">PhoneNumber</th>
+                                        <th data-priority="1" class="center">     Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.DashBoardUserList)
+                                    {
+                                        <tr>
+                                            <th>@item.Name</th>
+                                            <th>@item.Address</th>
+                                            <th>@item.PhoneNumber</th>
+                                            <th><partial name="_TableButtonPartial" model="@item.Id" /></th>
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+    <!--</div>--> <!-- container-fluid -->
+    <!--</div>-->
+    <!-- End Page-content -->
+
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © SmartOps.
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-right d-none d-sm-block">
+                        Design & Develop by Themesbrand
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<link href="~/js/v2/sweetalert.css" rel="stylesheet" />
+<script src="~/js/v2/jquery-1.10.2.js"></script>
+<script src="~/js/v2/sweetalert.js"></script>  
