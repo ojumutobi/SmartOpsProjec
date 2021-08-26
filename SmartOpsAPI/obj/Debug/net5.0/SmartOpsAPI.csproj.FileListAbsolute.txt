@@ -1,0 +1,7 @@
+C:\Users\oloruntobi.ojumu\source\repos\SmartOpsProject\SmartOpsAPI\obj\Debug\net5.0\SmartOpsAPI.csproj.AssemblyReference.cache
+C:\Users\oloruntobi.ojumu\source\repos\SmartOpsProject\SmartOpsAPI\obj\Debug\net5.0\SmartOpsAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oloruntobi.ojumu\source\repos\SmartOpsProject\SmartOpsAPI\obj\Debug\net5.0\SmartOpsAPI.AssemblyInfoInputs.cache
+C:\Users\oloruntobi.ojumu\source\repos\SmartOpsProject\SmartOpsAPI\obj\Debug\net5.0\SmartOpsAPI.AssemblyInfo.cs
+C:\Users\oloruntobi.ojumu\source\repos\SmartOpsProject\SmartOpsAPI\obj\Debug\net5.0\SmartOpsAPI.csproj.CoreCompileInputs.cache
+C:\Users\oloruntobi.ojumu\source\repos\SmartOpsProject\SmartOpsAPI\obj\Debug\net5.0\SmartOpsAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\oloruntobi.ojumu\source\repos\SmartOpsProject\SmartOpsAPI\obj\Debug\net5.0\SmartOpsAPI.MvcApplicationPartsAssemblyInfo.cache
